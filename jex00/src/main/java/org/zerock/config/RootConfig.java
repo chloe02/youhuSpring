@@ -11,6 +11,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @ComponentScan(basePackages= {"org.zerock.sample"})
+//자바 이용시 @MapperScan(basePackage={"org.zerock.mapper"})
 public class RootConfig {
 
 	@Bean
