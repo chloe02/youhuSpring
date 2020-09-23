@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 타입 별칭 지정 -->
+	<typeAliases>
+		<typeAlias type="com.tis.domain.ApplicationVO" alias="Application"/>
+		<typeAlias type="com.tis.domain.BoardVO" alias="Board"/>
+		<typeAlias type="com.tis.domain.ReviewVO" alias="Review"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="spring/mapper/ApplicationMapper.xml"/>
+		<mapper resource="spring/mapper/BoardMapper.xml"/>
+		<mapper resource="spring/mapper/ReviewMapper.xml"/>
+	</mappers>
+</configuration>
