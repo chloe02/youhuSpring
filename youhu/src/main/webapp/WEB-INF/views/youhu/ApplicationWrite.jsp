@@ -37,7 +37,10 @@
 					<td class="text-right m" style="vertical-align: middle;">이름 :</td>
 					<td><input class="form-control" id="name" name="name"></td>
 					<td class="text-right m" style="vertical-align: middle;">성별 :</td>
-					<td><input class="form-control" id="sex" name="sex"></td>
+					<td class="text-cetner m" style="vertical-align: middle;">
+					<input type="radio" id="sex" name="sex" value="1" checked>남
+					<input type="radio" id="sex" name="sex" value="2">녀				
+					</td>
 
 				</tr>
 				<tr>

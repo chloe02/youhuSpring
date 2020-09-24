@@ -83,7 +83,8 @@ public class ApplicationController {
 	}
 
 	@PostMapping("/appEditEnd")
-	public String AppEditEnd(Model model, @ModelAttribute("Application") ApplicationVO avo) {
+	public String AppEditEnd(Model model, 
+			@ModelAttribute("Application") ApplicationVO avo) {
 		int n = appSvc.applicationUpdate(avo);
 
 		String str = (n > 0) ? "수정성공" : "수정실패";

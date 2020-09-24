@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:import url="/top"/>
 <p></p>
+<form name="bf" id="bf" action="boardEditEnd" method="post">
 <div class="container">
 	<div class="col-md-12">
 		<div class="row">
@@ -37,19 +38,19 @@
 							<td class="text-right m" style="vertical-align: middle;">제목
 								:</td>
 							<td><input class="form-control" id="subject" name="subject"
-								value="${bvo.subject}" placeholder="subject" readonly></td>
+								value="${bvo.subject}" placeholder="subject" ></td>
 							<td class="text-right m" style="vertical-align: middle;">작성자
 								:</td>
 							<td><input class="form-control" id="name" name="name" value="${bvo.name}"
-								placeholder="Name" readonly></td>
+								placeholder="Name" ></td>
 						</tr>
 						<tr>
 							<td colspan="4"><textarea class="form-control" cols="4"
-									rows="15" id="contents" name="contents" placeholder="Content" readonly>${bvo.contents}</textarea>
+									rows="15" id="contents" name="contents" placeholder="Contents" >${bvo.contents}</textarea>
 						</tr>
 						<tr>
 							<td class="text-right" colspan="2">
-								<button type="button" onclick="send()"
+								<button type="button" id="btnEdit"
 									class="btn btn-outline-success">수정</button>
 							</td>
 							<td class="text-left" colspan="2">
@@ -64,4 +65,20 @@
 		</div>
 	</div>
 </div>
+
+<input type="text" name="bidx" value="${bvo.bidx}">
+<input type="text" name="midx" value="${bvo.midx}">
+</form>
+<script>
+$(function(){
+	$('#btnEdit').click(function(){
+	if(!$('#contents').val()){
+		alert('글 입력 ㄱ');
+		$('#contents').focus();
+		return false;
+	}
+		$('#bf').submit();
+	})
+})
+</script>
 <c:import url="/foot"/>

@@ -6,6 +6,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,6 +38,7 @@ public class BoardController {
 	
 	@RequestMapping("/boardView")
 	public String BoardView(Model model, @RequestParam(defaultValue="")int bidx) {
+		log.info("bidx==>"+bidx);
 		if(bidx==0) {
 			return "redirect:index";
 		}
@@ -46,9 +49,53 @@ public class BoardController {
 		
 	}
 	
+	@RequestMapping("/boardWrite")
+	public String boardWirte(Model model) {
+		
+		return "youhu/BoardWrite";
+	}
+	@RequestMapping("/boardWriteEnd")
+	public String boardWriteEnd(Model model, @ModelAttribute("Board") BoardVO bvo) {
+		
+		log.info("bvo====>"+bvo);
+		
+		int n = boSvc.boardInsert(bvo);
+		
+		String str = (n>0)?"글쓰기 성공":"글쓰기 실패";
+		String loc = (n>0)?"boardList":"boardWrite";
+		
+		model.addAttribute("message", str);
+		model.addAttribute("loc",loc);
+		
+		return "msg";
+	}
+	
 	@RequestMapping("/boardEdit")
-	public String BoardEdit(Model model) {
+	public String BoardEdit(Model model, 
+			@ModelAttribute("Board") BoardVO bvo) {
+		
+
+		if(bvo.getBidx()==0) {
+			return "redirect:index";
+		}
+		BoardVO boardInfo = this.boSvc.boardInfo(bvo.getBidx());
+		model.addAttribute("bvo", boardInfo);
 		
 		return "youhu/BoardEdit";
+	}
+			
+	@PostMapping("/boardEditEnd")
+	public String BoardEditEnd(Model model, @ModelAttribute("Board") BoardVO bvo) {
+		
+		int n = boSvc.boardEdit(bvo);
+		
+		String str = (n>0) ? "수정 성공":"수정 실패";
+		String loc = (n>0) ? "boardList":"boardEdit";
+		
+		model.addAttribute("message",str);
+		model.addAttribute("loc",loc);
+		
+		return "msg";
+		
 	}
 }

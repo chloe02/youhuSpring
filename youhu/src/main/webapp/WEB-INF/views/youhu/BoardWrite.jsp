@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/top"/>
 <p></p>
-<form name="borF" id="borF" action="BoardWriteEnd.do" method="post">
+<form name="borF" id="borF" action="b	oardWriteEnd" method="post">
 <div class="container">
 	<div class="col-md-12">
 		<div class="row">
