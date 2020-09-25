@@ -46,7 +46,8 @@
 	<div class="container">
 		<div class="navbar bg-light navbar-light">
 			<ul class="navbar-nav">
-				<li class="nav-item active"><a class="nav-link" href="<%=myctx%>/main">ImageLogo</a>
+				<li class="nav-item active"><a class="nav-link" href="<%=myctx%>/main">
+				<img src="../images/logo1.png"></a>
 				</li>
 			</ul>
 
@@ -71,7 +72,7 @@
 						<li class="nav-item"><a class="nav-link" href="/input">입양/분실등록</a></li>
 						<li class="nav-item"><a class="nav-link" href="<%=myctx%>/appList">게시판</a></li>
 						<li class="nav-item"><a class="nav-link" href="/sss.jsp">고객센터</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">업체정보</a></li>
+						<li class="nav-item"><a class="nav-link" href="/info">정보센터</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">후원처</a></li>
 				</ul>
 			</div>

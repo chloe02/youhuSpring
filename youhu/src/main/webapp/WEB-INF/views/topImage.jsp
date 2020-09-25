@@ -18,13 +18,13 @@
 	<!-- The slideshow -->
 	<div class="carousel-inner">
 		<div class="carousel-item active">
-			<img src="images/a.png" alt="Los Angeles" style="width: 100%">
+			<img src="../images/caro1.png" alt="caro1" style="width: 100%">
 		</div>
 		<div class="carousel-item">
-			<img src="images/b.png" alt="Chicago" style="width: 100%">
+			<img src="../images/caro2.png" alt="caro2" style="width: 100%">
 		</div>
 		<div class="carousel-item">
-			<img src="images/c.png" alt="New York" style="width: 100%">
+			<img src="../images/caro3.png" alt="caro3" style="width: 100%">
 		</div>
 	</div>
 
